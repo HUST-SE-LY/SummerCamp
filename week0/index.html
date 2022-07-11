@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<audio src="https://music.163.com/song/media/outer/url?id=1895261682.mp3" controls="controls" class="audio"></audio>
-<div class="record"></div>
+<body class="body">
+<audio src="https://music.163.com/song/media/outer/url?id=1895261682.mp3" class="audio"></audio>
+<div class="record rot"><img src="http://p2.music.126.net/SK0Npu_bYwISBqqj88firA==/109951166625137707.jpg" class="album_img"></div>
+<header>
+    <p class="song_name">抜刀 (feat. 花譜)</p>
+    <span>专辑：</span><a class="album" href="#">抜刀 (feat. 花譜)</a>
+    <span class="s-singer">歌手：</span><a href="#" class="singer">花譜</a>/<a href="#" class="singer">羽生まゐご</a>
+    <span class="s-origin">来源：</span><a href="#" class="origin">搜索页</a>
+</header>
 <div class="lyrics"></div>
-<script src="lyrics.js"></script>
+<div class="loading_ball">
+    <div class="over-loading"></div>
+    <span class="ball"></span>
+</div>
+<footer>
+    <div class="song_info">
+        <img src="http://p2.music.126.net/SK0Npu_bYwISBqqj88firA==/109951166625137707.jpg" class="song_img">
+        <div class="info_1"><p>抜刀 (feat. 花譜)-<a href="#" class="singer">花譜</a>/<a href="#" class="singer">羽生まゐご</a></p>
+            <p class="music_time"></p>
+        </div>
+    </div>
+    <div class="play_button"><svg t="1657520876829" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4132" width="200" height="200"><path d="M224 938.713333a53.58 53.58 0 0 1-53.333333-53.433333V138.72a53.333333 53.333333 0 0 1 80.886666-45.666667l618.666667 373.28a53.333333 53.333333 0 0 1 0 91.333334l-618.666667 373.28a53.16 53.16 0 0 1-27.553333 7.766666z m0.046667-810.666666a10.98 10.98 0 0 0-5.333334 1.42 10.466667 10.466667 0 0 0-5.38 9.253333v746.56a10.666667 10.666667 0 0 0 16.18 9.133333l618.666667-373.28a10.666667 10.666667 0 0 0 0-18.266666l-618.666667-373.28a10.386667 10.386667 0 0 0-5.446666-1.586667z" fill="#ffffff" p-id="4133"></path></svg></div>
+</footer>
+<div class="change_model"><svg t="1657540157753" class="icon" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1680" width="200" height="200"><path d="M542.331247 955.220693a431.045474 431.045474 0 0 1-21.360033-861.450146 32.467251 32.467251 0 0 1 28.408844 14.311222 32.04005 32.04005 0 0 1 1.922403 31.82645A363.120567 363.120567 0 0 0 514.563204 299.040467a367.606174 367.606174 0 0 0 367.178974 368.033375H899.471005a32.25365 32.25365 0 0 1 30.331248 46.137672 427.200668 427.200668 0 0 1-387.471006 242.009179z m-69.633708-790.321235A366.965373 366.965373 0 1 0 845.857322 729.65874 431.686275 431.686275 0 0 1 450.483104 299.040467a427.200668 427.200668 0 0 1 22.214435-135.209011z" p-id="1681" fill="#8a8a8a"></path></svg></div>
+
 <script>
+    let record=document.querySelector(".record")
     let lyrics_list=document.querySelector(".lyrics");
     let audio=document.querySelector(".audio");
+    let time_info=document.querySelector(".music_time");
+    let play_button=document.querySelector(".play_button");
+    let over_loading=document.querySelector(".over-loading");
+    let loading_ball=document.querySelector(".loading_ball");
+    let body=document.querySelector(".body");
+    let change_model=document.querySelector(".change_model");
+    let ball=document.querySelector(".ball")
+
 </script>
+<script src="main.js"></script>
+<script src="lyrics.js"></script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.record {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    border: darkgrey 1vw solid;
+    top: 10vw;
+    left: 10vw;
+}
+.album_img {
+    width: 17vw;
+    height: 17vw;
+    border-radius: 50%;
+    position: absolute;
+    left: 4vw;
+    top: 4vw;
+}
+header {
+    margin-left: 45vw;
+    margin-top: 5vw;
+}
+.song_name {
+    font-size: 2vw;
+}
+body {
+    background: #f0f0f0;
+}
+.origin,.singer,.album {
+    font-size: 14px;
+}
+span {
+    font-size: 14px;
+}
+.s-origin,.s-singer {
+    margin-left: 3vw;
+}
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.lyrics {
+    height: 50vh;
+    overflow: scroll;
+    margin-left: 45vw;
+    margin-top: 3vh;
+    transition: all 0.1s;
+}
+.lyrics_content {
+    cursor: pointer;
+}
+.ch_lyrics {
+    font-size: 14px;
+}
+.jp_lyrics {
+    font-size: 18px;
+    margin-top: 2vw;
+}
+.lyrics::-webkit-scrollbar {
+    display: none;
+}
+.song_img {
+    width: 6vh;
+    height: 6vh;
+    border-radius: 1vh;
+    display: block;
+
+}
+footer {
+    height: 7vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+}
+.song_info {
+    display: flex;
+    margin-left: 3vw;
+}
+.info_1 {
+    margin-left: 2vw;
+    font-size: 14px;
+}
+.music_time {
+    color: gray;
+    margin-top: 0.5vw;
+}
+
+.play_button {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background: indianred;
+    position: absolute;
+    left: calc(50vw - 2.5vh);
+    cursor: pointer;
+}
+.icon {
+    width: 3vh;
+    height: 3vh;
+    margin: 1vh 1vh;
+}
+.rot {
+    animation: rotate_ani infinite 30s linear paused;
+}
+
+@keyframes rotate_ani {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loading_ball {
+    width: 100vw;
+    height: 0.5vh;
+    background: white;
+    margin-top: 20vh;
+    cursor: pointer;
+    display: flex;
+}
+.over-loading {
+    width: 0;
+    height: 0.5vh;
+    background: indianred;
+}
+.change_model {
+    position: fixed;
+    right: 10vw;
+    bottom: 5vh;
+    width: 5vw;
+    height: 3vh;
+    text-align: center;
+    line-height: 3vh;
+    cursor: pointer;
+}
+.ball {
+    width: 1vh;
+    height: 1vh;
+    border-radius: 50%;
+    background: indianred;
+    margin-top: -0.25vh;
+    margin-left: -0.1vh;
+}
