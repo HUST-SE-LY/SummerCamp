@@ -71,7 +71,7 @@ fetch("./lyrics.txt").then(res=>{
         each_sentence.pop();//去除由末尾换行符造成的空字符串
         for(let i in each_sentence){
             let time=add_obj(each_sentence[i]);
-            if(i>=3){
+            if(i>=3){//中文歌词文件不含歌手编曲等需要判断一次
                 let jp_lyrics=each_sentence[i].split("]")[1];
                 let ch_lyrics=ch_data[i-3].split("]")[1];
                 list.push(new lyrics_model(time,jp_lyrics,ch_lyrics));
@@ -81,9 +81,9 @@ fetch("./lyrics.txt").then(res=>{
                 list.push(new lyrics_model(time,jp_lyrics))
             }
         }
-        return list
+        return list//此时歌词list存储完毕
     }).then(list=>{
-        list_render(list);
+        list_render(list);//渲染歌词到屏幕上
     }).then(()=>{
         let lrc_content=document.querySelectorAll(".lyrics_content");
         for(let i in lrc_content) {
@@ -91,7 +91,7 @@ fetch("./lyrics.txt").then(res=>{
                 audio.currentTime=list[i].time;//点击歌词跳转播放
                 for(let j=0;j<lrc_content.length;j++) {
                     if(j!==i) {
-                        lrc_content[j].style.fontWeight="normal"
+                        lrc_content[j].style.fontWeight="normal"//其他歌词恢复正常
                     }
                 }//让之前加粗的歌词不再加粗
 
@@ -101,17 +101,17 @@ fetch("./lyrics.txt").then(res=>{
             for(let i=0;i<list.length;i++) {
                 if(i>0) {
                     if(list[i].time>audio.currentTime&&list[i-1].time<audio.currentTime) {
-                        lyrics_list.addEventListener("mousewheel",throttle(scroll_change,1000))
+                        lyrics_list.addEventListener("mousewheel",throttle(scroll_change,1000))//节流增加性能
                         if(!isScroll) {
                             lyrics_list.scrollTo({
                                 top:lrc_content[i].offsetTop-0.5*document.documentElement.clientHeight,
                                 behavior:"smooth"
-                            })
+                            })//歌词跟随平滑滚动
                         }
                         lrc_content[i-1].style.fontWeight="bold";//播放到的歌词加粗
 
                         if(i>1) {
-                            lrc_content[i-2].style.fontWeight="normal";
+                            lrc_content[i-2].style.fontWeight="normal";//上一句歌词加粗消失
                         }
                     }
                     else if(i===list.length-1&&list[i].time<audio.currentTime) {
