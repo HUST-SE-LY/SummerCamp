@@ -1,23 +1,29 @@
-class Node {
-    constructor(value) {
-        this.value=value;
-        this.parent=this;
+class DisjointSet {
+    constructor(count) {//初始化
+        this.parent=new Array(count);//存放所有元素
+        for(let i = 0;i<count;i++) {
+            this.parent[i]=i;//初始化每一个元素的parent都为自己
+        }
+    }
+    find(p) {//查找元素的顶部parent
+        if(this.parent[p]===p) {
+            return p;//顶部元素的parent还是指向自己，说明查找到了，直接返回
+        }
+        this.parent[p]=this.find(this.parent[p]);//递归查找并压缩路径
+        return this.parent[p];
+    }
+    union(p,q) {
+        let i=this.find(p);
+        let j=this.find(q);
+        if(i!==j) {//两个元素不能在一个集合中
+            this.parent[i]=j
+        }
+    }
+    isConnected(p,q) {
+        return this.find(p)===this.find(q)//顶部元素相同则说明在一个集合内
     }
 }
-function find(node) {//寻找父元素
-    if(node.parent===node) {
-        return node;
-    }
-    node.parent=find(node.parent);
-}
-function union(node1,node2) {//合并节点
-   let union1=find(node1);
-   let union2=find(node2);
-   if(union1===union2) {
-       return false;
-   }
-   union1.parent=union2;
-}
+
 
 
 
