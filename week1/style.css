@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.topHeader {
+  --font-color: rgba(255,255,255,0.7);
+  --font-color-hover: rgba(255,255,255,1);
+  --font-color-arrow: rgba(255,255,255,0.3);
+  --font-size: 15px;
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  background: black;
+  box-sizing: border-box;
+  padding-left: 40px;
+}
+
+.logo_top {
+  fill: #009ae4;
+  height: 40px;
+  width: 61px;
+  margin-right: 30px;
+}
+
+.logo_top_svg {
+  height: 28px;
+  margin-top: 6px;
+}
+
+.tab_top {
+  color: var(--font-color);
+  line-height: 40px;
+  margin-right: 30px;
+  font-size: 15px;
+  font-family: Arial;
+  transition: color  0.2s;
+}
+.tab_top:hover {
+  color: var(--font-color-hover);
+}
+
+.tab_top_game {
+  display: flex;
+  color: var(--font-color-hover);
+}
+
+.tab_top_esports {
+  display: flex;
+
+}
+
+.tab_top_svg {
+  fill: var(--font-color-arrow);
+  width: 14px;
+  height: 14px;
+  margin-top: 13px;
+  transition: all 0.2s;
+}
+
+.tab_top:hover > .tab_top_svg {
+  fill: var(--font-color);
+}
+
+.video {
+  width: 100vw;
+  overflow: hidden;
+  height: 600px;
+  position: relative;
+}
+video {
+  width: 1920px;
+  height: 1080px;
+  transform: translateY(-150px);
+  z-index: -1000000000000;
+}
+.main_logo {
+  fill: white;
+  position: absolute;
+  top: 40%;
+  width: 60vw;
+}
+
+

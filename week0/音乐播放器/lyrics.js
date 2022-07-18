@@ -60,10 +60,10 @@ function scroll_change(){
 }
 
 //fetch获取歌词文件
-fetch("./lyrics.txt").then(res=>{
+fetch("lyrics.txt").then(res=>{
     return res.text();//获取日文歌词
 }).then(data=>{
-    fetch("./lyrics_trans.txt").then(res_1=>{
+    fetch("lyrics_trans.txt").then(res_1=>{
         return res_1.text();//获取中文歌词
     }).then(data_1=>{
         let ch_data=data_1.split("\\n");
@@ -109,15 +109,19 @@ fetch("./lyrics.txt").then(res=>{
                             })//歌词跟随平滑滚动
                         }
                         lrc_content[i-1].style.fontWeight="bold";//播放到的歌词加粗
-
                         if(i>1) {
-                            lrc_content[i-2].style.fontWeight="normal";//上一句歌词加粗消失
+                            for(let j = 0;j<list.length;j++){
+                                if(j!==i-1) {
+                                    lrc_content[j].style.fontWeight="normal";
+                                }
+                            }
+                            //上一句歌词加粗消失
                         }
                     }
                     else if(i===list.length-1&&list[i].time<audio.currentTime) {
                         //播放到最后一句
                         lrc_content[i].style.fontWeight="bold"
-                        lrc_content[i-1].style.fontWeight="normal";
+
                     }
                 }
             }
