@@ -1,12 +1,55 @@
+@font-face {
+  font-family: big-noodle-too-oblique;
+  src: url("https://static.playoverwatch.com/fonts/big-noodle-too-oblique-1eed6dbdd0.woff");
+}
+
+@font-face {
+  font-family: roboto;
+  src: url("https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf");
+}
+
+@font-face {
+  font-family: FuturaNo2D;
+  src: url("https://static.playoverwatch.com/fonts/FuturaNo2D-DemiBold-8635bfcad5.woff");
+}
+
+@font-face {
+  font-family: roboto-italic;
+  src: url("https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xIIzI.woff2");
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url("https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2");
+}
+
+@font-face {
+  font-family: config;
+  src: url("https://static.playoverwatch.com/fonts/config-bold-webfont-da9c48c30a.woff2");
+}
+
+:root {
+  --main-color: rgb(240, 100, 20);
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+html {
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .topHeader {
-  --font-color: rgba(255,255,255,0.7);
-  --font-color-hover: rgba(255,255,255,1);
-  --font-color-arrow: rgba(255,255,255,0.3);
+  --font-color: rgba(255, 255, 255, 0.7);
+  --font-color-hover: rgba(255, 255, 255, 1);
+  --font-color-arrow: rgba(255, 255, 255, 0.3);
   --font-size: 15px;
   width: 100vw;
   height: 40px;
@@ -34,8 +77,9 @@
   margin-right: 30px;
   font-size: 15px;
   font-family: Arial;
-  transition: color  0.2s;
+  transition: color 0.2s;
 }
+
 .tab_top:hover {
   color: var(--font-color-hover);
 }
@@ -68,17 +112,364 @@
   height: 600px;
   position: relative;
 }
+
 video {
   width: 1920px;
   height: 1080px;
   transform: translateY(-150px);
   z-index: -1000000000000;
 }
+
 .main_logo {
   fill: white;
   position: absolute;
-  top: 40%;
+  top: 25%;
   width: 60vw;
+  left: 20vw;
 }
+
+.main_header {
+  width: calc(100vw - 40px);
+  background: white;
+  box-sizing: border-box;
+  margin-left: 20px;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+}
+
+.intro1 {
+  overflow: hidden;
+  height: 550px;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 20px;
+  background: url("https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltaea16f381f193243/62a031b3f3c8d8111c809b3b/WatchpointPack_Desktop.jpg?auto=webp") center;
+}
+
+.intro1_content {
+  margin-right: 0;
+  margin-left: 50%;
+}
+
+.intro1_p1 {
+  font-family: big-noodle-too-oblique;
+  font-size: 64px;
+  color: rgb(75, 83, 93);
+  margin-top: 100px;
+  line-height: 60px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.intro1_p2 {
+  font-family: roboto;
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 1.2em;
+  max-width: 32em;
+}
+
+.button1 {
+  width: 200px;
+  height: 45px;
+  background: #f06414;
+  border-radius: 2px;
+  margin-top: 25px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.button1:hover {
+  border: #f06414 solid 1px;
+  opacity: 1;
+  margin-top: 24px;
+  transform: translateX(-1px);
+}
+
+.intro2 {
+  width: 100vw;
+  background: url("https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt6a7af037055d920f/62a031ab472e8f7cff3896c1/FoundersPack_Desktop.jpg?auto=webp") center;
+  height: 300px;
+  padding: 40px 50% 40px 20px;
+  box-sizing: border-box;
+}
+
+.intro2_content {
+  width: 620px;
+  text-align: right;
+  margin-right: 0;
+  margin-left: 80px;
+}
+
+.intro2_p1 {
+  font-family: FuturaNo2D;
+  font-size: 24px;
+  line-height: 27px;
+  letter-spacing: .8px;
+  font-weight: 700;
+  display: block;
+  color: rgb(75, 83, 93);
+
+
+}
+
+.intro2_p2 {
+  font-family: roboto;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.intro2_p3 {
+  font-family: roboto-italic;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.button2 {
+  width: 200px;
+  height: 45px;
+  background: rgb(0, 125, 209);
+  border-radius: 2px;
+  margin-top: 25px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+  margin-left: 420px;
+
+}
+
+.button2:hover {
+  border: rgb(0, 125, 209) solid 1px;
+  opacity: 1;
+  margin-top: 24px;
+  transform: translateX(-1px);
+}
+
+.intro3 {
+  background: url("https://static.playoverwatch.com/img/pages/home/featured-news/bg-2560-ebf0f79d83.jpg") center no-repeat;
+  background-size: auto 100%;
+  padding: 90px 20px 70px 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative;
+}
+
+.intro3_head1 {
+  font-family: FuturaNo2D;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  display: inline;
+  line-height: 25px;
+}
+
+.intro3_view {
+  cursor: pointer;
+}
+
+.intro3_head2 {
+  font-family: FuturaNo2D;
+  font-size: 21px;
+  color: #f06414;
+  line-height: 25px;
+  letter-spacing: 0.8px;
+  transition: color 0.3s;
+}
+
+.intro3_svg {
+  width: 1em;
+  height: 1em;
+  fill: #f06414;
+  transform: rotate(270deg) translateX(0.125em);
+  vertical-align: middle;
+  transition: fill 0.3s;
+
+}
+
+.intro3_view:hover .intro3_svg {
+  fill: rgb(255, 176, 51);
+}
+
+.intro3_view:hover .intro3_head2 {
+  color: rgb(255, 176, 51);
+}
+
+.intro3_content {
+  margin-right: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 30px;
+  width: 50%;
+  height: calc(100% - 70px);
+  padding-right: 20px;
+  padding-bottom: 15px;
+}
+
+.list {
+  border: lightgray 1px solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: all 0.3s;
+}
+
+.list_1 {
+  background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/hn/HNRF6LBDLQSW1658103774284.jpg") top no-repeat;
+  background-size: 120%;
+}
+
+.list_2 {
+  transform: translateX(20px);
+  background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/vg/VGER09HO6GZE1657215359234.png") top no-repeat;
+  background-size: 110%;
+}
+
+.list_3 {
+  transform: translateY(15px);
+  background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/2z/2Z56KC2UWWP41657150703928.jpg") top no-repeat;
+  background-size: 110%;
+}
+
+.list_4 {
+  background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/tc/TC9DX8Y5684F1656284448344.png") top no-repeat;
+  background-size: 120%;
+  transform: translateX(20px) translateY(15px);
+}
+
+.list_describe {
+  padding: 10px 20px 10px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background: white;
+  border-top: lightgray 1px solid;
+}
+
+.des_head {
+  font-family: roboto-bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgb(75, 83, 93);
+}
+
+.des_time {
+  font-family: roboto;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 5px;
+  color: rgb(118, 118, 118);
+}
+
+.list_1:hover {
+  background-size: 130%;
+}
+
+.list_2:hover {
+  background-size: 120%;
+}
+
+.list_3:hover {
+  background-size: 120%;
+}
+
+.list_4:hover {
+  background-size: 130%;
+}
+
+.intro3_logo {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  width: 20%;
+  text-align: center;
+}
+
+.intro3_logo_des {
+  font-family: config;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+}
+
+.intro3_logo_img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button3 {
+  width: 200px;
+  height: 45px;
+  background: black;
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.button3:hover {
+  border: black solid 1px;
+  margin-top: -1px;
+  opacity: 1;
+}
+
+.intro4 {
+  background-image: url("https://static.playoverwatch.com/img/scene/candy-5d74c9b93f.jpg");
+  background-size: 100%;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.intro4_head {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.intro4_head_p1 {
+  font-family: big-noodle-too-oblique;
+  font-size: 64px;
+  line-height: 60px;
+  color: rgb(75, 83, 93);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.intro4_head_p2 {
+  margin-top: .6em;
+  font-family: roboto;
+  font-size: 21px;
+  line-height: 30px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+
+
+
+
+
+
 
 
