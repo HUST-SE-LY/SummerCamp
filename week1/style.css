@@ -28,6 +28,10 @@
   src: url("https://static.playoverwatch.com/fonts/config-bold-webfont-da9c48c30a.woff2");
 }
 
+@font-face {
+  font-family: blizzard;
+  src: url("https://static.playoverwatch.com/fonts/blizzard-6374a0ee30.regular.woff");
+}
 :root {
   --main-color: rgb(240, 100, 20);
 }
@@ -130,14 +134,220 @@ video {
 
 .main_header {
   width: calc(100vw - 40px);
-  background: white;
+  background: #f2f1ed;
   box-sizing: border-box;
-  margin-left: 20px;
+  left: 20px;
   height: 50px;
   position: absolute;
   top: 40px;
+  display: flex;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.head_fixed {
+  width: 100vw;
+  background: #f2f1ed;
+  box-sizing: border-box;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  border-radius: 2px;
+  padding: 0 20px 0 20px;
+  margin: 0 auto;
+  transition: all 0.3s;
+  z-index: 99999999999;
+}
+.pause_button {
+  bottom: 60px;
+  left: 40px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.svg_container {
+  background: #f06414;
+  padding: .3em;
+  border-radius: 2px;
+  margin-right: .5em;
+  cursor: pointer;
+
 }
 
+.pause_word {
+  font-family: FuturaNo2D;
+  font-size: 21px;
+  line-height: 21px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+.pause_svg {
+  width: 1em;
+  height: 1em;
+  fill: white;
+}
+.header_logo {
+  width: 54px;
+  height: 50px;
+  background: #353c42;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border: 1px solid #4b535d;
+  border-radius: 2px 0 0 2px;
+  transition: background-color 0.3s;
+}
+
+.header_logo:hover {
+  background: #212529;
+}
+
+.head_left_tab {
+  display: flex;
+}
+
+.left_tab {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  font-family: FuturaNo2D;
+  color: rgb(75, 83, 93);
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+.left_tab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 65%;
+  background-color: #e5e3dc;
+
+}
+
+.head_arrow_bottom {
+  width: 20px;
+  margin-left: 6px;
+  fill: rgb(75, 83, 93);
+  transition: fill 0.3s;
+}
+.head_right_tab {
+  display: flex;
+  margin-right: 0;
+
+}
+.right_tab {
+  display: flex;
+  line-height: 50px;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  font-family: FuturaNo2D;
+  color: rgb(75, 83, 93);
+  letter-spacing: 0.5px;
+  margin-right: 0;
+  text-align: right;
+  transition: color 0.3s,fill 0.3s,border-bottom-width 0.3s;
+  border-bottom: #f06414 0px solid;
+}
+.right {
+  display: flex;
+  margin-left: auto;
+}
+.right_tab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 65%;
+  background-color: #e5e3dc;
+}
+.right_tab:hover {
+  color: #f06414;
+  border-bottom: #f06414 5px solid;
+}
+.right_tab:hover .head_arrow_bottom {
+  transform: translateY(2.5px);
+  fill: #f06414;
+}
+.main_button {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  justify-content: center;
+  top: 50%;
+  gap: 30px;
+}
+
+.main_button1 {
+  width: 13em;
+  height: 45px;
+  background: rgb(0, 125, 209);
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.main_button1:hover {
+  border: rgb(0, 125, 209) solid 1px;
+  opacity: 1;
+  margin-top: -1px;
+  transform: translateX(-1px);
+}
+
+.main_button1:hover + .main_button2 {
+  transform: translateX(-1px);
+}
+
+.main_button2:hover {
+  border: #f06414 solid 1px;
+  opacity: 1;
+  margin-top: -1px;
+  transform: translateX(-1px);
+}
+
+.main_button2 {
+  width: 13em;
+  height: 45px;
+  background: #f06414;
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.buy_button {
+  padding: 12px 20px;
+  font-family: FuturaNo2D;
+  background: #f06414;
+  opacity: 0.9;
+  cursor: pointer;
+  font-size: 21px;
+  line-height: 26px;
+  margin-left: auto;
+  color: white;
+  border-radius: 2px;
+}
+.buy_button:hover {
+  opacity: 1;
+}
 .intro1 {
   overflow: hidden;
   height: 550px;
@@ -189,8 +399,7 @@ video {
 .button1:hover {
   border: #f06414 solid 1px;
   opacity: 1;
-  margin-top: 24px;
-  transform: translateX(-1px);
+  transform: translateX(-1px) translateY(-1px);
 }
 
 .intro2 {
@@ -199,13 +408,17 @@ video {
   height: 300px;
   padding: 40px 50% 40px 20px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
 }
 
 .intro2_content {
   width: 620px;
   text-align: right;
   margin-right: 0;
-  margin-left: 80px;
+  max-width: 50vw;
+
 }
 
 .intro2_p1 {
@@ -237,7 +450,7 @@ video {
   height: 45px;
   background: rgb(0, 125, 209);
   border-radius: 2px;
-  margin-top: 25px;
+  margin-top: 0px;
   font-weight: 700;
   font-family: FuturaNo2D;
   color: white;
@@ -247,14 +460,15 @@ video {
   opacity: 0.9;
   cursor: pointer;
   margin-left: 420px;
+  min-width: 200px;
+
 
 }
 
 .button2:hover {
   border: rgb(0, 125, 209) solid 1px;
   opacity: 1;
-  margin-top: 24px;
-  transform: translateX(-1px);
+  transform: translateX(1px);
 }
 
 .intro3 {
@@ -316,6 +530,8 @@ video {
   height: calc(100% - 70px);
   padding-right: 20px;
   padding-bottom: 15px;
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
 }
 
 .list {
@@ -324,6 +540,7 @@ video {
   display: flex;
   flex-direction: column-reverse;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .list_1 {
@@ -332,13 +549,13 @@ video {
 }
 
 .list_2 {
-  transform: translateX(20px);
+
   background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/vg/VGER09HO6GZE1657215359234.png") top no-repeat;
   background-size: 110%;
 }
 
 .list_3 {
-  transform: translateY(15px);
+
   background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/2z/2Z56KC2UWWP41657150703928.jpg") top no-repeat;
   background-size: 110%;
 }
@@ -346,7 +563,7 @@ video {
 .list_4 {
   background: url("https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/tc/TC9DX8Y5684F1656284448344.png") top no-repeat;
   background-size: 120%;
-  transform: translateX(20px) translateY(15px);
+
 }
 
 .list_describe {
@@ -431,8 +648,8 @@ video {
 }
 
 .intro4 {
-  background-image: url("https://static.playoverwatch.com/img/scene/candy-5d74c9b93f.jpg");
-  background-size: 100%;
+  background: url("https://static.playoverwatch.com/img/scene/candy-5d74c9b93f.jpg") center;
+  background-size: auto 100%;
   padding-top: 72px;
   padding-bottom: 72px;
 }
@@ -466,6 +683,782 @@ video {
 }
 
 
+.hero_img {
+  background: url("https://d1u1mce87gyfbn.cloudfront.net/hero/echo/full-portrait.png") no-repeat right;
+  width: 490px;
+  background-size: auto 100%;
+  height: 440px;
+  margin-left: 100px;
+}
+
+.hero_content {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hero_container {
+  background-image: linear-gradient(90deg, rgba(64, 82, 117, 0) 0, rgba(64, 82, 117, .8) 25%, rgba(64, 82, 117, .8) 75%, rgba(64, 82, 117, 0));
+  background-size: 100% 200px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.hero_des {
+  width: 400px;
+  text-align: center;
+  align-self: center;
+}
+
+.hero_des_p1 {
+  font-family: big-noodle-too-oblique;
+  font-size: 54px;
+  line-height: 50px;
+  color: white;
+}
+
+.hero_des_p2 {
+  font-family: roboto;
+  color: white;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.hero_list {
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hero_little {
+  width: 76px;
+  height: 84px;
+  border: 3px solid #f6f6f6;
+  display: inline-block;
+  overflow: hidden;
+  background: rgba(51, 51, 51, .9);
+  border-radius: 7px;
+  transform: skew(25rad);
+  box-sizing: border-box;
+  transition: transform .3s, -webkit-transform .3s;;
+}
+
+.hero_icon {
+  width: calc(100% + 10px);
+  height: 100%;
+  background: url("https://d1u1mce87gyfbn.cloudfront.net/hero/ana/icon-portrait.png") bottom no-repeat;
+  background-size: calc(100% + 10px);
+  display: block;
+  transform: skew(-25rad) translateX(-5px);
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero_name {
+  width: fit-content;
+  font-family: roboto;
+  font-size: 12px;
+  z-index: 2;
+  text-align: center;
+  padding: .25em .5em;
+  margin-left: -17%;
+  border-radius: .3em;
+  line-height: 1.25em;
+  box-sizing: border-box;
+  transition: background-color .15s ease-in;
+  align-self: center;
+}
+
+.hero:hover {
+  z-index: 1;
+}
+
+.hero:hover .hero_name {
+  background: rgb(246, 246, 246);
+  z-index: 2;
+}
+
+.hero:hover .hero_little {
+  transform: skew(25rad) scale(1.3);
+  background: #ff9c00;
+
+}
+
+.intro5 {
+  background: url("https://static.playoverwatch.com/img/pages/buy/buy-bar-bg-3c956a1db2.jpg") no-repeat;
+  width: 100%;
+
+}
+
+.intro5_section1 {
+  width: 100%;
+  height: 45px;
+  padding: 36px 0px 30px 0px;
+  border-bottom: gray 1px solid;
+  position: relative;
+}
+
+.button6 {
+  width: 200px;
+  height: 45px;
+  background: #f06414;
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 21px;
+  line-height: 45px;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+  margin: 0 auto;
+  position: absolute;
+  top: 36px;
+  left: calc(50% - 100px);
+
+}
+
+.button6:hover {
+  border: #f06414 solid 1px;
+  opacity: 1;
+  margin-top: -1px;
+  transform: translateX(-1px);
+}
+
+.intro5_section2 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.intro5_sec2_head {
+  margin-top: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #f6f6f6;
+  font-family: big-noodle-too-oblique;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.intro5_sec2_logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: hsla(0, 0%, 100%, .8) 1px solid;
+  opacity: 0.5;
+  margin-right: 15px;
+  margin-left: 15px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.logo_inner {
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  border: hsla(0, 0%, 100%, .8) 2px solid;
+  margin: 12.5% auto;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.logo_svg {
+  fill: hsla(0, 0%, 100%, .8);
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  border: rgb(255, 255, 255) 1px solid;
+}
+
+.logo:hover .logo_inner {
+  border: rgb(255, 255, 255) 2px solid;
+}
+
+.logo:hover .logo_svg {
+  fill: rgb(255, 255, 255);
+}
+.intro1_mobile {
+  background: url("https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blta8381530159eb4c8/62a031b354eada112e74b5ed/WatchpointPack_Mobile.jpg?auto=webp") top no-repeat;
+  width: 100vw;
+  padding-top: 230px;
+  padding-bottom: 84px;
+  position: relative;
+  display: none;
+}
+.intro1_mobile_p1 {
+  margin-top: 100px;
+  padding: 0 20px;
+  font-family: big-noodle-too-oblique;
+  font-size: 54px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  color: rgb(75, 83, 93);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.intro1_mobile_p2 {
+  font-family: roboto;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 5px;
+  width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.button1_mobile {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  font-family: FuturaNo2D;
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  background: #f06414;
+  bottom: 40px;
+  left: calc(50% - 100px);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.intro2_mobile {
+  display: none;
+}
+.button1_mobile:hover {
+  width: 202px;
+  height: 32px;
+  line-height: 32px;
+  left: calc(50% - 101px);
+  bottom: 39px;
+}
+.intro2_mobile_img {
+  background: url("https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltb342323284d83396/62a2765d36cb8f7e70b94911/FoundersPack_Mobile_02.jpg?auto=webp") no-repeat center;
+  width: 100vw;
+  height: 250px;
+}
+.intro2_mobile_content {
+  padding: 40px 20px 70px 20px;
+  position: relative;
+}
+.intro2_mobile_p1 {
+  padding: 0 100px;
+  font-family: big-noodle-too-oblique;
+  font-size: 54px;
+  letter-spacing: 1px;
+  line-height: 50px;
+  color: rgb(75, 83, 93);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.intro2_mobile_p2 {
+  font-family: roboto;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 5px;
+  padding: 0 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro2_mobile_p3 {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: roboto-italic;
+}
+.button2_mobile {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  font-family: FuturaNo2D;
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  background: rgb(0, 125, 209);
+  bottom: 30px;
+  left: calc(50% - 100px);
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.button2_mobile:hover {
+  width: 202px;
+  height: 32px;
+  line-height: 32px;
+  left: calc(50% - 101px);
+  bottom: 29px;
+  opacity: 1;
+}
+.intro3_mobile {
+  display: none;
+}
+.intro3_mobile_header {
+  background: url("https://static.playoverwatch.com/img/pages/home/featured-news/bg-960-6ff8d7baba.jpg") center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  padding: 80px 50% 80px 0;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: right;
+  position: relative;
+}
+.intro3_logo_img_mobile {
+  height: 100px;
+  margin: 20px auto;
+  display: block;
+
+}
+.intro3_logo_des_mobile {
+  font-family: config;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+.button3_mobile {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  font-family: FuturaNo2D;
+  font-size: 16px;
+  color: white;
+  background: black;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.button3_mobile:hover {
+  opacity: 1;
+}
+.intro3_content_mobile {
+  display: grid;
+  max-width: 700px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+}
+.intro3_mobile_body {
+  padding: 0 20px 50px 20px;
+  margin-top: 10px;
+}
+.list_mobile {
+  border: lightgray 1px solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: all 0.3s;
+  height: 255px;
+  margin: 0 auto;
+}
+.main_header_mobile {
+  height: 48px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background: white;
+  display: none;
+}
+.mobile_header_img {
+  height: 48px;
+  padding: 6px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+.left_tab_mobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.right_tab_mobile {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  fill: rgb(0,174,255);
+  cursor: pointer;
+}
+.wrap {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+.tab_aside {
+  width: 319px;
+  height: 100vh;
+  margin-right: 40px;
+  box-sizing: border-box;
+  border: 1px rgb(75, 83, 93) solid;
+  overflow-y: scroll;
+  background-color: rgb(47, 53, 67);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 28px;
+  height: 28px;
+  fill: white;
+  cursor: pointer;
+}
+.delete:hover {
+  fill: black;
+}
+.aside_logo {
+  padding: 40px 30px 30px 30px;
+  fill: white;
+  border-bottom: rgba(100,100,100,0.5) 1px solid;
+}
+.aside_list {
+  height: 52px;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  border-bottom: rgba(100,100,100,0.5) 1px solid;
+  font-family: FuturaNo2D;
+  color: white;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  fill: white;
+  letter-spacing: 0.5px;
+
+}
+.aside_list:hover {
+  color: #f06414;
+  fill: #f06414;
+}
+.aside_svg {
+  width: 15px;
+  height: 15px;
+  margin-left: 3px;
+  margin-top: 3.5px;
+}
+.aside_inner {
+  background-color: rgb(33, 37, 41);
+  display: none;
+}
+.inner_text {
+  padding: 8px 50px;
+  font-family: roboto;
+  font-size: 16px;
+  line-height: 1.4;
+  color: white;
+}
+.main_header_bottom {
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  background-color: #f06414;
+  transition: all 0.15s;
+}
+.line_game {
+  width: 110.23px;
+  transform: translateX(54px);
+
+}
+.line_hero {
+  width: 96.06px;
+  transform: translateX(calc(54px + 110.23px));
+}
+.line_event {
+  width: 119.32px;
+  transform: translateX(calc(54px + 110.23px + 96.06px));
+}
+.line_media {
+  width: 87.39px;
+  transform: translateX(calc(54px + 110.23px + 96.06px + 119.32px));
+}
+.line_news {
+  width: 108.63px;
+  transform: translateX(calc(54px + 110.23px + 96.06px + 119.32px + 87.39px));
+}
+.line_esports {
+  width: 127.09px;
+  transform: translateX(calc(54px + 110.23px + 96.06px + 119.32px + 87.39px + 108.63px));
+}
+.line_community {
+  width: 158.75px;
+  transform: translateX(calc(54px + 110.23px + 96.06px + 119.32px + 87.39px + 108.63px + 127.09px));
+}
+.left_tab:hover {
+  color: #f06414;
+}
+.left_tab:hover .head_arrow_bottom {
+  fill: #f06414;
+}
+.bottom_part {
+  padding-top: 20px;
+  background-color: #f0edf2;
+}
+.language_svg {
+  width: 24px;
+  height: 24px;
+  fill: rgba(0, 157, 255);
+  margin-right: 5px;
+}
+.language_choose_svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  fill: rgba(0,0,0,0.7);
+}
+.language {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.language_des {
+  font-family: blizzard;
+  font-size: 16px;
+  line-height: 24px;
+}
+.blizzard_logo {
+  margin: 30px auto;
+  text-align: center;
+}
+.blizzard_logo_svg {
+  fill:#009dff;
+  transition: fill 2s;
+}
+.blizzard_logo_svg:hover{
+  fill: aqua;
+}
+.api {
+  text-align: center;
+}
+.api_tab {
+  font-family: blizzard;
+  margin: 0 10px;
+  color: rgba(0,0,0,0.7);
+  transition: color 0.3s;
+}
+.api_tab::after {
+  width: 1px;
+  height: 10px;
+  background-color: rgba(0,0,0,0.3);
+  content: "";
+  position: relative;
+  display: inline-block;
+  right: -10px
+}
+.api_tab:hover {
+  color: rgba(0,0,0,1);
+}
+.app {
+  margin: 40px auto;
+  text-align: center;
+  font-family: blizzard;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.app_img {
+  width: 14px;
+  height: 14px;
+  fill: rgb(0, 116, 224);
+}
+.app_head {
+  color: rgba(0,0,0,0.5);
+}
+.app_content {
+  cursor: pointer;
+  color: rgb(0, 116, 224);
+}
+.app_content:hover {
+  color: black;
+}
+.trade {
+  text-align: center;
+}
+.trade1 {
+  color: rgb(0,0,0,0.5);
+  font-family: blizzard;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.trade2 {
+  color: rgb(0,0,0,0.5);
+  font-family: blizzard;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.trade3 {
+  color: rgba(0,0,0,0.7);
+  font-family: blizzard;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+trade3:hover {
+  color: rgba(0,0,0,1);
+}
+.trade4 {
+  color: rgb(0,0,0,0.5);
+  font-family: blizzard;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.privacy {
+  text-align: center;
+}
+.privacy_tab {
+  font-family: blizzard;
+  margin: 0 10px;
+  color: rgba(0,0,0,0.7);
+  transition: color 0.3s;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.privacy_tab::after {
+  width: 1px;
+  height: 10px;
+  background-color: rgba(0,0,0,0.3);
+  content: "";
+  position: relative;
+  display: inline-block;
+  right: -10px
+}
+.last_img {
+  padding: 30px 20px;
+  text-align: center;
+}
+.bottom_img {
+  width: 75px;
+}
+
+@media screen and (max-width: 960px) {
+  .hero_content {
+    display: none;
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .button {
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .intro2_p1 {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  .intro2_p2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .intro2_p3 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .intro1_p1 {
+    font-size: 52px;
+    line-height: 50px;
+  }
+  .intro1_p2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .intro4_head_p1 {
+    font-size: 54px;
+    line-height: 50px;
+  }
+  .intro4_head_p2 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .main_header {
+    display: none;
+  }
+  .head_fixed {
+    display: none;
+  }
+  .topHeader {
+    display: none;
+  }
+  .main_header_mobile {
+    display: block;
+  }
+}
+@media screen and (max-width: 960px) {
+  .intro1_mobile {
+    display: block;
+  }
+  .intro1 {
+    display: none;
+  }
+  .intro2 {
+    display: none;
+  }
+  .intro2_mobile {
+    display: block;
+  }
+  .intro3 {
+    display: none;
+  }
+  .intro3_mobile {
+    display: block;
+  }
+}
+@media screen and (max-width: 640px) {
+  .intro3_content_mobile {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .list_mobile {
+    width: 350px;
+  }
+  .main_button {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main_button1 {
+    width: 20em;
+    align-self: center;
+  }
+  .main_button2 {
+    align-self: center;
+  }
+}
 
 
 
