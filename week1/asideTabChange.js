@@ -9,7 +9,13 @@ left_tab.addEventListener("click",(e)=>{
   e.stopPropagation()
 })
 body.addEventListener("click",()=>{
-  tabChange()
+  tabChange();
+  if(wrap.style.display==="block") {
+    wrap.style.display="none";
+  }
+  if(gameList.style.display==="block") {
+    gameList.style.display="none";
+  }
 })
 console.log()
 tab_list[0].addEventListener("click",(e)=>{
